@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a p {
+    font-style: italic;
+    font-size: 0.875em;
+    color: #1e90ff;
+}
+
+a p:hover {
+    color: #084c8e;
+}
+
+/*
+    Start of Navigation Top
+*/
+
+nav {
+    background: #f6f6f6;
+    padding: 20px;
+
+}
+
+nav div {
+    display: inline-block;
+}
+
+nav .logout {
+    float: right;
+}
+
+/*
+    End of Navigation Top
+*/
+
+.wrapper {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.login_wrapper {
+    width: 400px;
+    background: #f6f6f6;
+    border-radius: 20px;
+}
+
+.wrapper form {
+    margin: 20px 0;
+}
+
+.wrapper form input {
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 0.875em
+}
+
+.wrapper form input[type="text"],
+.wrapper form input[type="password"] {
+    border: 1px solid #999;
+    text-indent: 5px;
+    padding: 5px 0;
+}
+
+.wrapper form input[type="submit"] {
+    padding: 10px;
+    border: none;
+    background: #149614;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.banner_wrapper {
+    margin: 0 auto;
+    background: #f6f6f6;
+    padding: 20px;
+}
+
+.banner_content {
+    margin-top: 20px;
+    border: solid 2px #555;
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+.error {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #F79D98;
+    border: 2px solid #f32020;
+}
+
+.error p {
+    color: #f32020;
+    font-weight: 700;
+    margin: 0;
+}
