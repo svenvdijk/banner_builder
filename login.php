@@ -47,27 +47,38 @@ if(isset($_SESSION['logged_in'])) {
 
     <body>
         <div class="container">
-            <section class="wrapper">
-                <div class="wrapper login_wrapper">
+        <section class="wrapper">
+                <div class="login-page">
 
-                    <?php if(isset($error)) { ?>
-                        <div class="error">
-                            <p> <?php echo $error ?> </p>
+                    <header class="header_main">
+                        <a class="header_logo" href="#">logo</a>
+                        <div class="header_login">
+                            <span>New to NewsGo?</span>
+                            <a class="btn btn_login" href="signup.php">Sign Up</a>
                         </div>
-                    <?php } ?>
+                    </header>
+                        
+                    <div class="login-content login_wrapper">
+                        <div class="page-body">
+                            <?php if(isset($error)) { ?>
+                                <div class="error">
+                                    <p> <?php echo $error ?> </p>
+                                </div>
+                            <?php } ?>
 
-                    <h4>Login</h4>
-                    <form action="login.php" method="post" autocomplete="off">
-                        <input type="text" name="username" placeholder="Username" /> <Br>
-                        <input type="password" name="password" placeholder="Password" /> <br>
-                        <input type="submit" value='Login' />
-                    </form>
-                    <a href="forgot.php">
-                        <p>I forgot my username or password</p>
-                    </a>
-                    <a href="signup.php">
-                        <p>Create account</p>
-                    </a>
+                            <h3>Log in</h3>
+                            <form action="login.php" method="post" autocomplete="off">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" placeholder="Username" /> <Br>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" placeholder="Password" /> <br>
+                                <input type="submit" value='Login' />
+                            </form>
+                            <div class="login-footer">
+                                <a href="#">Forgot password</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

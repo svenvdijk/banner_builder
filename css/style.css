@@ -1,23 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri:300,400,500,600,700');
+
 * {
     box-sizing: border-box;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Hind Siliguri', Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: #3a2778;
+}
+
+hr {
+    height: 1px;
+    margin: 2em 0;
+    border: 0;
+    background-color: rgba(228,228,231,0);
+    background-image: -webkit-linear-gradient(left, rgba(228,228,231,0), rgba(228,228,231,0.9) 10%, rgba(228,228,231,0.9) 90%, rgba(228,228,231,0));
+    background-image: linear-gradient(to right, rgba(228,228,231,0), rgba(228,228,231,0.9) 10%, rgba(228,228,231,0.9) 90%, rgba(228,228,231,0)); 
 }
 
 h1, h2, h3, h4, h5, p {
     margin: 0px;
 }
 
+h2 {
+    font-size: 1.875em;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.7em;
+    font-weight: 300;
+}
+
 a {
     text-decoration: none;
+    color: dodgerblue;
+    transition: ease-in 0.7s ease-in 0.7s;
+}
+
+a:hover {
+    color: #0c5aa7;
 }
 
 a p {
     font-style: italic;
     font-size: 0.875em;
-    color: #1e90ff;
+    color: #3a2778;
 }
 
 a p:hover {
@@ -29,7 +60,7 @@ a p:hover {
 */
 
 nav {
-    background: #f6f6f6;
+    background: #fff;
     padding: 20px;
 
 }
@@ -51,37 +82,176 @@ nav .logout {
     padding: 20px;
 }
 
-.login_wrapper {
-    width: 400px;
-    background: #f6f6f6;
-    border-radius: 20px;
-}
+/* Button styling */
 
-.wrapper form {
-    margin: 20px 0;
-}
-
-.wrapper form input {
-    margin: 5px 0;
+.btn {
+    color: #fff;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.875em
 }
 
-.wrapper form input[type="text"],
-.wrapper form input[type="password"] {
-    border: 1px solid #999;
-    text-indent: 5px;
+.btn_login {
+    font-size: .875em;
+    margin-left: 10px;
+    background: rgba(0,0,0,0.3)
+}
+
+.btn_login:hover{
+    background: rgba(0,0,0,0.5)
+}
+
+/* End Button styling */
+
+/* Signup page */
+
+.header_main {
+    padding: 110px 0 35px;
+    position: relative;
+    color: white;
+}
+
+.header_main h2 {
+    text-align: center;
+    font-weight: inherit;
+}
+
+.header_logo,
+.header_login {
+    position: absolute;
+}
+
+.header_logo {
+    top: 20px;
+    left: 0;
+}
+
+.header_login {
+    right: 0;
+    top: 20px;
+}
+
+.header_login span {
+    font-weight: 300;
+}
+
+.signup-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.login-content,
+.signup-content {
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.25), 0 3px 20px 0 rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.signup-content {
+    padding: 40px;
+}
+
+.signup-content .page-body {
+    width: calc(100% - 332px);
+}
+
+.signup-form.side-left {
+    width: 332px;
+}
+
+.signup-content .page-body, 
+.signup-form.side-left {
+    float:left;
+}
+
+.signup-content .benefits.page-body {
+    padding-right: 40px;
+}
+
+.benefits hr {
+    margin: 20px 40px 30px;
+}
+
+.login-page h3,
+.benefits h3 {
+    color: #3a2778;
+}
+
+.login-page p,
+.benefits p {
+    font-size: 0.875em;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+form input {
+    margin: 0 0 5px 0;
+    border-radius: 5px;
+    font-size: 0.875em;
+    width: 100%;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="submit"] {
+    border-radius: 5px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    border: 1px solid #d2d2d2;
+    text-indent: 10px;
     padding: 5px 0;
 }
 
-.wrapper form input[type="submit"] {
+form input[type="submit"] {
+    margin: 10px 0 0;
     padding: 10px;
     border: none;
-    background: #149614;
+    background: dodgerblue;
     color: #fff;
     font-weight: bold;
     letter-spacing: 0.5px;
 }
+
+.login-page label,
+.signup-page label {
+    font-weight: 300;
+    display: block;
+    font-size: .875em;
+    margin-top: 4px;
+}
+
+sub.required {
+    padding-left: 4px;
+    color: #f32020;
+}
+
+/* End Signup page */
+
+/* Login page */
+
+.login-page {
+    width: 432px;
+    margin: 0 auto;
+}
+
+.login-content {
+    padding: 40px 40px 100px 40px;
+}
+
+.login-footer {
+    padding: 20px 40px;
+    border-top: solid 2px #d2d2d2;
+    background: #e2e2e2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* End login page */
 
 .banner_wrapper {
     margin: 0 auto;
