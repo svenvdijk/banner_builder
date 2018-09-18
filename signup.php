@@ -12,8 +12,49 @@ if(isset($_SESSION['logged_in'])) {
 
 } else {
 
-    if(isset($_POST['username'], $_POST['email'], $_POST['password'])){
+    if(isset($_POST['first_name'], $_POST['last_name'], $_POST['username'], $_POST['email'], $_POST['password'])){
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
 
+        if(empty($first_name)) {
+            $error = 'First name is required!';
+        } elseif(empty($last_name)) {
+            $error = 'Last name is required!';
+        } elseif(empty($username)) {
+            $error = 'Username name is required!';
+        } elseif(empty($email)) {
+            $error = 'Email address is required!';
+        } elseif(empty($password)) {
+            $error = 'Password is required!';
+        } else {
+            $query = $pdo->prepare("SELECT * FROM users WHERE user_name = ? OR user_email = ?");
+            $query->bindValue(1, $username);
+            $query->bindValue(2, $email);
+
+            $query->execute();
+
+            $num = $query->rowCount();
+
+            if($num > 0) {
+                $error = 'User already exist';
+            } else {
+                $query = $pdo->prepare("INSERT INTO users (user_firstname, user_lastname, user_name, user_email, user_password) VALUES (?, ?, ?, ?, ?)");
+                $query->bindValue(1, $first_name);
+                $query->bindValue(2, $last_name);
+                $query->bindValue(3, $username);
+                $query->bindValue(4, $email);
+                $query->bindValue(5, $password);
+
+                $query->execute();
+
+                $confirm = 'Account has been created!';
+            }
+
+
+        }
     }
 
     ?>
@@ -49,13 +90,21 @@ if(isset($_SESSION['logged_in'])) {
                             </div>
                             <hr>
                         </div>
-                        <?php if(isset($error)) { ?>
-                            <div class="error">
-                                <p> <?php echo $error ?> </p>
-                            </div>
-                        <?php } ?>
 
                         <div class="signup-form side-left">
+
+                            <?php if(isset($error)) { ?>
+                                <div class="error">
+                                    <p> <?php echo $error ?> </p>
+                                </div>
+                            <?php } ?>
+
+                            <?php if(isset($confirm)) { ?>
+                                <div class="confirm">
+                                    <p> <?php echo $confirm ?> </p>
+                                </div>
+                            <?php } ?>
+
                             <form action="signup.php" method="post" autocomplete="off">
                                 <label>First name<sub class="required" title="required" >*</sub></label>
                                 <input type="text" name="first_name" placeholder="First name" /> <Br>

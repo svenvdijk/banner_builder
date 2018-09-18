@@ -45,9 +45,9 @@ if(isset($_SESSION['logged_in'])) {
 
                     <h4>Add A New Banner</h4>
                     <form action="add-banner.php" method="post" autocomplete="off">
-                        <input type="text" name="banner_title" placeholder="Banner Title" /> <br>
-                        <input type="text" name="banner_sizeX" placeholder="Banner Height" /> <br>
-                        <input type="text" name="banner_sizeY" placeholder="Banner Width" /> <br>
+                        <input type="text" name="banner_title" placeholder="Banner Title" />
+                        <input type="text" name="banner_sizeX" placeholder="Banner Height" />
+                        <input type="text" name="banner_sizeY" placeholder="Banner Width" />
                         <input type="submit" value="Add New Banner" />
                     </form>
                 </section>

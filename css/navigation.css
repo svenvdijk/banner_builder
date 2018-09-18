@@ -1,0 +1,68 @@
+nav {
+    background: #fff;
+    padding: 20px;
+
+}
+
+nav hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav.navigation div.nav-item {
+    display: inline-block;
+}
+
+nav .user-menu {
+    margin-top: -5px;
+    float: right;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background: slategray;
+    border-radius: 50%;
+}
+
+.user-menu_content {
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 12px 1px rgba(0,0,0,0.1), 0 0 1px 1px rgba(0,0,0,0.1);
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
+.user-information {
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+.user-information .user-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: slategray;
+    float: left;
+}
+
+.user-information p {
+    line-height: 20px;
+    padding-left: 60px;
+}
+
+.user-information p span:nth-child(2) {
+    color: #999;
+    font-style: italic;
+}
+
+.user-menu_content a {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.user-menu_content a:hover {
+    background: #d2d2d2;
+}
+

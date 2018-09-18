@@ -75,7 +75,7 @@ if(isset($_SESSION['logged_in'])) {
                                 <input type="submit" value='Login' />
                             </form>
                             <div class="login-footer">
-                                <a href="#">Forgot password</a>
+                                <a href="#">Forgot password?</a>
                             </div>
                         </div>
                     </div>
