@@ -17,7 +17,8 @@ if(isset($_SESSION['logged_in'])) {
         $last_name = $_POST['last_name'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = ($_POST['password']);
+        $secret = password_hash($password, PASSWORD_BCRYPT);
 
         if(empty($first_name)) {
             $error = 'First name is required!';
@@ -46,7 +47,7 @@ if(isset($_SESSION['logged_in'])) {
                 $query->bindValue(2, $last_name);
                 $query->bindValue(3, $username);
                 $query->bindValue(4, $email);
-                $query->bindValue(5, $password);
+                $query->bindValue(5, $secret);
 
                 $query->execute();
 

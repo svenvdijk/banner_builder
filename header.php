@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/navigation.css">
-    <script src="./js/main.js"></script>
 </head>
 
     

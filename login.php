@@ -12,27 +12,38 @@ if(isset($_SESSION['logged_in'])) {
 
     if(isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         if(empty($username) or empty($password)) {
             $error = 'All fields are required!';
         } else {
 
-            $query = $pdo->prepare("SELECT * FROM users WHERE user_name = ? AND user_password = ?");
+            $query = $pdo->prepare("SELECT * FROM users WHERE user_name = ?");
             $query->bindValue(1, $username);
-            $query->bindValue(2, $password);
 
             $query->execute();
-            
+
             $num = $query->rowCount();
             
-            if($num == 1) {
-                //User entered correct details
-                $_SESSION['logged_in'] = true;
 
-                header('Location: index.php');
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
-            } else {
+                $secret = $row['user_password'];
+
+                if(password_verify($password, $secret)){
+                    //User entered correct details
+                    $_SESSION['logged_in'] = true;
+
+                    header('Location: index.php');
+
+                } else {
+                    $error = 'Incorrect details!';
+                }
+
+            }
+
+
+            if($num == 0) {
 
                 $error = 'Incorrect details!';
                 
