@@ -3,6 +3,27 @@
     padding: 20px;
 }
 
+.wrapper.wrapper-home {
+    display: flex;
+}
+
+.wrapper .content_nav {
+    width: 20%;
+    height: 300px;
+    background: white;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+
+.container {
+    overflow: hidden;
+}
+.container.content {
+    margin: 20px;
+    background: #fff;
+}
+
 /* Button styling */
 
 .btn {
@@ -141,6 +162,10 @@ form input[type="submit"] {
     letter-spacing: 0.5px;
 }
 
+form p:first-of-type {
+    font-size: 1.175em;
+}
+
 .login-page label,
 .signup-page label {
     font-weight: 300;
@@ -222,4 +247,59 @@ sub.required {
 
 .confirm p {
     color: #26b926;
+}
+
+/*
+    Navigation
+*/
+.dropdown {
+    cursor: pointer;
+}
+
+/*
+    image editer
+*/
+
+.image-container {
+    float: left;
+    width: 60%;
+}
+
+.image-container div.image {
+    width: 100%;
+    height: 100vh;
+    background: #f6f6f6;
+}
+
+.image {
+    padding: 20px;
+}
+
+.image-content {
+    width: 40%;
+    padding: 60px 20px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid #f6f6f6;
+}
+
+.image-content:hover {
+    border: 2px dashed #888;
+}
+
+.edit-container {
+    width: 40%;
+}
+
+#canvas {
+    width: 100%;
+    height: auto
+}
+
+.edit-container {
+    padding-left: 20px;
+}
+
+.edit-container h3 {
+    text-align: center;
 }

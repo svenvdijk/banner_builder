@@ -2,8 +2,8 @@
 
 session_start();
 
-include_once('./includes/connection.php');
-include_once('./includes/banner.php');
+include_once('../../includes/connection.php');
+include_once('../../includes/banner.php');
 
 $banner = new Banner;
 $banners = $banner->fetch_all();
@@ -11,16 +11,16 @@ $banners = $banner->fetch_all();
 
 if(isset($_SESSION['logged_in'])){
 
-    include 'header.php'
+    include '../../header.php'
 
     ?>
         <body>
 
             <?php
-                include './includes/navigation.php';
+                include '../../includes/navigation.php';
             ?>
     
-            <div class="container">
+            <div class="container content">
                 <section class="wrapper">
                     <?php foreach ($banners as $banner) { ?>
                         <div class="banner_wrapper">
@@ -42,6 +42,6 @@ if(isset($_SESSION['logged_in'])){
     </html>
 
 <?php } else {
-    header('Location: login.php');
+    header('Location: ../../login.php');
 } ?>
 

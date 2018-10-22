@@ -20,12 +20,10 @@ if(isset($_SESSION['logged_in'])) {
 
             $query = $pdo->prepare("SELECT * FROM users WHERE user_name = ?");
             $query->bindValue(1, $username);
-
             $query->execute();
 
             $num = $query->rowCount();
             
-
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
                 $secret = $row['user_password'];
@@ -33,6 +31,8 @@ if(isset($_SESSION['logged_in'])) {
                 if(password_verify($password, $secret)){
                     //User entered correct details
                     $_SESSION['logged_in'] = true;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['email'] = $row['user_email'];
 
                     header('Location: index.php');
 
@@ -41,7 +41,6 @@ if(isset($_SESSION['logged_in'])) {
                 }
 
             }
-
 
             if($num == 0) {
 
@@ -55,10 +54,9 @@ if(isset($_SESSION['logged_in'])) {
 
     ?>
    
-
     <body>
         <div class="container">
-        <section class="wrapper">
+            <section class="wrapper">
                 <div class="login-page">
 
                     <header class="header_main">

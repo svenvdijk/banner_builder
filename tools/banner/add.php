@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once('./includes/connection.php');
+include_once('../../includes/connection.php');
 
 if(isset($_SESSION['logged_in'])) {
     if(isset($_POST['banner_title'], $_POST['banner_sizeY'], $_POST['banner_sizeX'])){
@@ -20,22 +20,22 @@ if(isset($_SESSION['logged_in'])) {
 
             $query->execute();
 
-            header('Location: index.php');
+            header('Location: ../../index.php');
         }
     }
     ?>
     <?php
     
-    include 'header.php'
+    include '../../header.php'
     
     ?>
         <body>
 
             <?php
-                include './includes/navigation.php';
+                include '../../includes/navigation.php';
             ?>
 
-            <div class="container">
+            <div class="container content">
                 <section class="wrapper">
                     <?php if(isset($error)) { ?>
                         <div class="error">
@@ -44,7 +44,7 @@ if(isset($_SESSION['logged_in'])) {
                     <?php } ?>
 
                     <h4>Add A New Banner</h4>
-                    <form action="add-banner.php" method="post" autocomplete="off">
+                    <form action="add.php" method="post" autocomplete="off">
                         <input type="text" name="banner_title" placeholder="Banner Title" />
                         <input type="text" name="banner_sizeX" placeholder="Banner Height" />
                         <input type="text" name="banner_sizeY" placeholder="Banner Width" />
@@ -57,7 +57,7 @@ if(isset($_SESSION['logged_in'])) {
 <?php 
 
 } else {
-    header('Location: login.php');
+    header('Location: ../../login.php');
 } 
 
 ?>
