@@ -276,7 +276,6 @@ sub.required {
 }
 
 .image-content {
-    width: 40%;
     padding: 60px 20px;
     height: auto;
     margin: 0 auto;
@@ -294,6 +293,10 @@ sub.required {
 #canvas {
     width: 100%;
     height: auto
+}
+
+#canvas:empty {
+    display: none;
 }
 
 .edit-container {
